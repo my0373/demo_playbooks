@@ -2,9 +2,21 @@
 - hosts:  all
   vars:
     application: ""
+    snow_request: ""
+    application_message: ""
   tasks:
     - name: Install {{ application }}
       yum:
         name: "{{ application }}"
         state: latest
       become: yes
+
+      
+    - name: Deploy MOTD for {{ inventory_hostname }}
+      template:
+        src: motd.j2
+        dest: /etc/motd
+        mode: '0644'
+      become: yes
+      
+    
