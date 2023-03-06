@@ -1,0 +1,10 @@
+---
+- hosts:  all
+  vars:
+    application: ""
+  tasks:
+    - name: "Install {{ application }}"
+      yum:
+        name: "{{ application }}"
+        state: latest
+      become: yes
