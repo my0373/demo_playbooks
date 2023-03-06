@@ -3,7 +3,7 @@
   vars:
     application: ""
   tasks:
-    - name: "Install {{ application }}"
+    - name: Install {{ application }}
       yum:
         name: "{{ application }}"
         state: latest
