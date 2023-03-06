@@ -9,11 +9,11 @@
       name: nginx
       state: present
   
-  - name: Open firewall on port 80
-    firewalld:
-      port: 80/tcp
-      permanent: true
-      state: enabled
+  # - name: Open firewall on port 80
+  #   firewalld:
+  #     port: 80/tcp
+  #     permanent: true
+  #     state: enabled
   
   - name: Deploy HTML template
     template:
